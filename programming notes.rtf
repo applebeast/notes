@@ -1,0 +1,193 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red53\green53\blue53;\red220\green161\blue13;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\fs24 \cf2 programming notes\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 git add . = adds all the files in the directory to git\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 git add something.something = adds that particular file\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+git checkout -f = if you want to remove changes without committing them. it will destroy unsaved changes\
+\
+git branch = tells you what branch you\'92re working on.\
+\
+git push = uploads your changes to the server\
+\
+git pull = downloads your changes from the server.\
+\
+git remote add origin = do this from the git folder you want to add to github. \
+\
+git reset \'97hard commitnumber = revert to commit of commit number and destroy all commits afterwards.\
+\
+\
+QUICK INFO: even if you run an iOS app in the emulator, git will say the project is changed. If you don\'92t like that, destroy the changes.\
+\
+\
+\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 github notes:\
+\
+if you create a repo with one file called \'93file a\'94 and push it to git, and then you create another file named \'93file b\'94 and pull from git, if will not erase file b.\
+\
+when you pull from git, only your\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+creating ssh key:\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 if you use a free account with github, everyone can look at your code.\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 if you use a free account with bitbucket, you get 5 free repositories.\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 ssh key notes: IMPORTANT! SSH KEYS ARE CONFIDENTIAL\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 to use github, you need this thing called an ssh key.\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 go here for help {\field{\*\fldinst{HYPERLINK "https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/"}}{\fldrslt \cf3 https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/}},\
+or keep reading this to get the same instructions:\
+\
+type ssh-keygen -t rsa -b 4096 -C "earlfechter@gmail.com"\
+\
+after executing the command, hit enter when it asks you where you want to save your ssh key, and for the passphrase I decided to put: urfpipigp9g4\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 After it saves, type this        eval "$(ssh-agent -s)"          to ensure ssh is enabled.\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 it should say          agent pid xxxx\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 after that run this           ssh-add ~/.ssh/id_rsa\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+it should say identity added something something something else\
+\
+\
+and then run pbcopy < ~/.ssh/id_rsa.pub\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 to copy it to clipboard so you can add it to github.\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 to add to github go to settings, ssh keys, give it a name and put it in.\
+\
+corresponding video is section 1 lecture 19\
+\
+\
+\
+\
+\
+\
+first pull:\
+after linking git to the server, github will create a read file. and maybe make other changes. so before you upload your changes to github (push), you\'92ll need to download the version that github modified (pull.)  do this by typing git pull origin master, but if this does not work, go ahead and push it by typing git push origin master. Then pull it to make sure the pull command is working.\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 delete known host\
+if you added something to the list of known hosts and you want to remove it, type      nano ~/.ssh/known_hosts  \
+and then delete the line in the file with the bad host.\
+\
+\
+\
+\
+\
+\
+xcode notes:\
+\
+|| = or\
+\
+&& = and\
+\
+when making a function, it should look like this:\
+\
+func yourmom() \{\
+your code goes here\
+\}\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 when calling a function it should look like this:\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 yourmom()\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 if you want to put several different commands on a single line of code, use a semicolon.\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 print \'93your mom\'94; print \'93your dad\'94; 6+4; functionA\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 -= operand means\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 var1 = var1 - var2\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 var one now equals what it just equaled before this operation, minus var two.\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 except instead of doing it that way, you do it this way\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 var1 -= var2\
+\
+to insert a variable\'92s value into a string, put                print (\'93your mom weighs \\(variable) pounds\'94)\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 when putting in function parameters, you must declare them. and unless you say var before the parameter, it is automatically a constant.\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf2 \
+if you are trying to print something and it says you have to put a semicolon in between print and what you\'92re trying to print, you probably forgot to put the value to be printed in parentheses.}
